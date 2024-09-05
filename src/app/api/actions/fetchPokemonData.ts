@@ -9,7 +9,7 @@ export async function fetchPokemonData(offset?: number, limit?: number) {
   
     const indexData = (await getPokemonIndex(
       offset ? offset : 0,
-      limit ? limit : 100
+      limit ? limit : 99
     )) as PokemonIndex;
   
     const pokemonData = await Promise.all(

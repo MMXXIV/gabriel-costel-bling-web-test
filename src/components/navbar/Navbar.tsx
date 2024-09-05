@@ -13,7 +13,7 @@ const Navbar = () => {
   const [debouncedQuery, setDebouncedQuery] = useState<string>('');
   const [pokemonResults, setPokemonResults] = useState<Pokemon[]>([]);
   const [showResults, setShowResults] = useState<boolean>(false);
-  const [isLoading, setLoading] = useState<boolean>(true);
+  const [isLoading, setLoading] = useState<boolean>(false);
 
   useEffect(() => {
     const timerId = setTimeout(() => {

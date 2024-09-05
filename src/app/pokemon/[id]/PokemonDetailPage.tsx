@@ -59,7 +59,7 @@ export default function PokemonDetailPage({
   if (pokemonData)
     return (
       <>
-        <main className="w-full h-full flex flex-col gap-4 md:gap-8">
+        <main className="w-full h-full flex flex-col gap-3 md:gap-8">
           <div className="h-1/2 w-full gap-3 md:gap-6 flex flex-col md:flex-row">
             <Card className="relative md:w-1/5 min-h-full rounded-md  flex flex-col justify-center">
               <Image

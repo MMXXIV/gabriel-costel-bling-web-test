@@ -44,7 +44,7 @@ export default function Page() {
     return (
       <>
         <Navbar />
-        <div className="bg-gray-200 md:p-20 p-10">
+        <div className="bg-gray-200 md:p-20 p-10 translate-y-20 md:translate-y-10">
           <PokemonDetailPage pokemonData={data} pokemonSpecies={speciesData} />
         </div>
       </>
