@@ -18,7 +18,7 @@ const Navbar = () => {
   useEffect(() => {
     const timerId = setTimeout(() => {
       setDebouncedQuery(query);
-    }, 30);
+    }, 350);
 
     return () => {
       clearTimeout(timerId);
