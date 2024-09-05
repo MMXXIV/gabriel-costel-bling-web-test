@@ -54,8 +54,6 @@ export default function PokemonDetailPage({
   const battleCries = pokemonData.cries;
   const pokemonMoves = pokemonData.moves
 
-  console.log(baseStats);
-
   if (pokemonData)
     return (
       <>
