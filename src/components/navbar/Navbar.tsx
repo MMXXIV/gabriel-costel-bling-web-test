@@ -13,12 +13,12 @@ const Navbar = () => {
   const [debouncedQuery, setDebouncedQuery] = useState<string>('');
   const [pokemonResults, setPokemonResults] = useState<Pokemon[]>([]);
   const [showResults, setShowResults] = useState<boolean>(false);
-  const [loading, setLoading] = useState<boolean>(false);
+  const [isLoading, setLoading] = useState<boolean>(true);
 
   useEffect(() => {
     const timerId = setTimeout(() => {
       setDebouncedQuery(query);
-    }, 350);
+    }, 30);
 
     return () => {
       clearTimeout(timerId);
@@ -55,7 +55,7 @@ const Navbar = () => {
   }, [debouncedQuery]);
 
   return (
-    <div className="h-20 w-screen p-4 flex items-center justify-between bg-white shadow-md md:px-10">
+    <div className="fixed z-50 h-20 w-screen p-4 flex items-center justify-between bg-white shadow-md md:px-10">
       {/* Left side: Logo */}
       <div className="md:w-1/4 w-2/4">
         <Link
@@ -71,6 +71,7 @@ const Navbar = () => {
           showResults ? 'flex' : 'hidden'
         } w-screen h-screen absolute bg-black bg-opacity-20 backdrop-blur-sm z-40 top-20 left-0 transition-all ease-in-out duration-500`}
       ></div>
+
       {/* Right side: Search bar */}
       <div className="justify-end relative  flex z-40 w-full md:w-1/4">
         <div className="relative ml-auto flex-1 md:grow-0">
@@ -117,6 +118,14 @@ const Navbar = () => {
           <div className="absolute top-full left-0 mt-2 w-full bg-white border border-gray-300 rounded-lg shadow-lg p-4">
             No results found.
           </div>
+        )}
+        {isLoading ? (
+          <div className="absolute top-full left-0 mt-2 w-full bg-white border border-gray-300 rounded-lg shadow-lg p-4 flex lex-row gap-2 h-20">
+            <div className="w-1/4 h-full animate-pulse bg-gray-200 rounded-md"></div>
+            <div className="w-full h-full animate-pulse bg-gray-200 rounded-md"></div>
+          </div>
+        ) : (
+          ''
         )}
       </div>
     </div>
